@@ -111,7 +111,25 @@ int main(void){
             }
         }
 
-        printf("%f, %f \n", enemies[0].x, enemies[0].y);
+        for (int i = 0; i < ENEMIES_TOTAL; i++) {
+            if (enemies[i].x != emptyVector.x && enemies[i].y != emptyVector.y) { // SLOPPPPPPP. EI KANNATA NEEGREID KES SIHUKEST PASKA TEEVAD!!!!
+                float dx, dy, m;
+                
+                const float c = 2.0f; // ENEMY KIIRUS SA FUCKING JEEGER!!!!!
+
+                dx = ballPosition.x - enemies[i].x;
+                dy = ballPosition.y - enemies[i].y;
+                m = sqrtf(dx * dx + dy * dy);
+
+                if (m > 0) {
+                    dx = (dx / m) * c;
+                    dy = (dy / m) * c;
+
+                    enemies[i].x += dx;
+                    enemies[i].y += dy;
+                }
+            }
+        }
 
         BeginDrawing();
 
