@@ -125,8 +125,11 @@ int main(void){
                     dx = (dx / m) * c;
                     dy = (dy / m) * c;
 
-                    enemies[i].x += dx;
-                    enemies[i].y += dy;
+                    // COMMENTED OUT TO MAKE IT MOVE HORIZONTALLY ONLY MORE SIMILKIAR TO THE OG SPACE INVADERS
+                    //enemies[i].x += dx;
+
+                    enemies[i].y += c;
+                    // CHANGE TO dy IF U WANT NEEMIS TO MOVE TOWARDS PLATER
                 }
             }
         }
